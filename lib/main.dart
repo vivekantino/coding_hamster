@@ -39,7 +39,7 @@ class _MyAppState extends State<MyApp> {
                   theme: ThemeData(
                       fontFamily: 'Inter',
                       scaffoldBackgroundColor: AppColors.white),
-                  title: "EZ Contract",
+                  title: "Coding Hamster",
                   debugShowCheckedModeBanner: false,
                   getPages: getPages,
                   home: const SplashScreen());
