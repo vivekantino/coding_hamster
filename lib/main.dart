@@ -2,6 +2,7 @@ import 'package:coding_hamster/feature/authentication/view/login_screen.dart';
 import 'package:coding_hamster/feature/authentication/view/signup_screen.dart';
 import 'package:coding_hamster/feature/authentication/view/splash_screen.dart';
 import 'package:coding_hamster/feature/home/view/home_screen.dart';
+import 'package:coding_hamster/feature/home/view/profile_screen.dart';
 import 'package:coding_hamster/responsive/size_config.dart';
 import 'package:coding_hamster/route/app_routes.dart';
 import 'package:coding_hamster/theme/app_colors.dart';
