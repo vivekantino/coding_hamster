@@ -37,9 +37,9 @@ class _MyAppState extends State<MyApp> {
               SizeConfig().init(constraints, orientation);
               return GetMaterialApp(
                   theme: ThemeData(
-                      fontFamily: 'Inter',
-                      scaffoldBackgroundColor: AppColors.whiteColor),
-                  title: "EZ Contract",
+                    fontFamily: 'Roboto',
+                      scaffoldBackgroundColor: AppColors.white),
+                  title: "Coding Hamster",
                   debugShowCheckedModeBanner: false,
                   getPages: getPages,
                   home: const SplashScreen());
