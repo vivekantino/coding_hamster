@@ -1,4 +1,5 @@
 import 'package:coding_hamster/api_client/api_exception.dart';
+import 'package:coding_hamster/core/utils/email_validation.dart';
 import 'package:coding_hamster/core/utils/utils.dart';
 import 'package:coding_hamster/feature/authentication/repository/auth_repository.dart';
 import 'package:flutter/material.dart';
@@ -29,8 +30,8 @@ class AuthController extends GetxController {
   void checkSignUpStatus() {
     if (firstName.text.isNotEmpty &&
         lastName.text.isNotEmpty &&
-        email.text.isNotEmpty &&
-        phoneNo.text.isNotEmpty) {
+        EmailValidation.validateEmail(email: email.text) &&
+        phoneNo.text.length == 10) {
       isSignUpFilled.value = true;
     } else {
       isSignUpFilled.value = false;

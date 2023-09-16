@@ -88,7 +88,7 @@ class SignUpScreen extends StatelessWidget {
                 height: 24.heightMultiplier,
               ),
               AppTextField(
-                hintText: "Phone number (Optional)",
+                hintText: "Phone number",
                 labelText: "Phone number",
                 controller: controller.phoneNo,
                 keyboardType: TextInputType.phone,
