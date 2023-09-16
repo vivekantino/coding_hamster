@@ -1,8 +1,10 @@
 import 'package:coding_hamster/core/common_widgets/app_buttons.dart';
 import 'package:coding_hamster/core/common_widgets/app_text_field.dart';
 import 'package:coding_hamster/feature/authentication/controller/auth_controller.dart';
+import 'package:coding_hamster/feature/authentication/view/signup_screen.dart';
 import 'package:coding_hamster/theme/app_colors.dart';
 import 'package:coding_hamster/theme/app_text_style.dart';
+import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
@@ -55,6 +57,9 @@ class LoginScreen extends StatelessWidget {
                     AppTextField(
                       hintText: "Enter your Email",
                       controller: authController.email,
+                      onChanged: (value) {
+                        authController.checkLoginFieldsFilled();
+                      },
                     ),
                     const SizedBox(height: 24),
                     const Text(
@@ -66,17 +71,43 @@ class LoginScreen extends StatelessWidget {
                     AppTextField(
                       hintText: "Password",
                       controller: authController.password,
+                      onChanged: (value) {
+                        authController.checkLoginFieldsFilled();
+                      },
                     ),
                     const SizedBox(
                       height: 20,
                     ),
-                    AppButton.primaryMedium(
-                      padding: const EdgeInsets.symmetric(vertical: 13),
-                      child: const Text(
-                        'Continue',
-                      ),
-                      onPressed: () => authController.checkLoginStatus(),
+                    Obx(
+                      () => AppButton.primaryMedium(
+                          padding: const EdgeInsets.symmetric(vertical: 13),
+                          child: const Text(
+                            'Continue',
+                          ),
+                          onPressed:
+                              (authController.isLoginFilled.value == true)
+                                  ? () {
+                                      authController.login();
+                                    }
+                                  : null),
                     ),
+                    const SizedBox(
+                      height: 20,
+                    ),
+                    RichText(
+                        text: TextSpan(
+                            style: const TextStyle(color: Colors.black),
+                            text: 'No Account?  ',
+                            children: [
+                          TextSpan(
+                            recognizer: TapGestureRecognizer()
+                              ..onTap = () => Get.to(() => SignUpScreen()),
+                            text: 'Sign Up',
+                            style: const TextStyle(
+                                decoration: TextDecoration.underline,
+                                color: Color.fromARGB(255, 1, 1, 130)),
+                          ),
+                        ])),
                   ],
                 ),
               )

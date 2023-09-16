@@ -1,13 +1,13 @@
 import 'package:coding_hamster/local_storage/secure_storage_helper.dart';
 
-class AuthRepository {
-  AuthRepository._();
+class AuthUtil {
+  AuthUtil._();
 
-  /// Cached instance of [AuthRepository];
-  static AuthRepository? _instance;
+  /// Cached instance of [AuthUtil];
+  static AuthUtil? _instance;
 
-  static AuthRepository get instance {
-    _instance ??= AuthRepository._();
+  static AuthUtil get instance {
+    _instance ??= AuthUtil._();
 
     return _instance!;
   }

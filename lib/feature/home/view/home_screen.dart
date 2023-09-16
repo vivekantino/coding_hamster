@@ -12,9 +12,11 @@ class HomeScreen extends StatelessWidget {
         backgroundColor: AppColors.white,
       ),
       body: Column(
-        children: [Container(
-          
-        )],
+        children: [
+          Container(
+            
+          ),
+        ],
       ),
     );
   }
