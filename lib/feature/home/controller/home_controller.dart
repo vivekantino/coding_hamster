@@ -29,4 +29,17 @@ class HomeController extends GetxController {
       Utils.handleCatchException();
     }
   }
+
+  Future<void> getAppliedJobsList() async {
+    isJobLoaded.value = false;
+    try {
+      final response = await HomeReposiotry.getJobsList();
+      listofAllJobs = JobsModel.fromJson(response).data ?? [];
+      isJobLoaded.value = true;
+    } on ApiException catch (e) {
+      Utils.handleException(e.errorMessage.toString());
+    } catch (e) {
+      Utils.handleCatchException();
+    }
+  }
 }

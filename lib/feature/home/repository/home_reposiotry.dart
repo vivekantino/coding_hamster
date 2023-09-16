@@ -11,4 +11,13 @@ class HomeReposiotry {
 
     return response;
   }
+
+  static Future<Map<String, dynamic>> getAppliedJobs(
+      {Map<String, dynamic>? body}) async {
+    Map<String, dynamic> response = await ApiClient().get(
+      ApiRoutes.getAppliedJobs,
+    );
+
+    return response;
+  }
 }

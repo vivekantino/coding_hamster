@@ -45,6 +45,21 @@ class _HomeScreenState extends State<HomeScreen> {
           ],
         ),
         actions: [
+          GestureDetector(
+            onTap: () {
+              Get.toNamed(AppRoutes.appliedJobsScreen);
+            },
+            child: Container(
+              color: AppColors.transparent,
+              child: const Icon(
+                Icons.approval_outlined,
+                color: AppColors.primary,
+              ),
+            ),
+          ),
+          SizedBox(
+            width: 16.widthMultiplier,
+          ),
           const Icon(
             Icons.bookmark_outline,
             color: AppColors.primary,
