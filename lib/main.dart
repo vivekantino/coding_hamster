@@ -1,5 +1,4 @@
 import 'package:coding_hamster/feature/authentication/view/login_screen.dart';
-import 'package:coding_hamster/feature/authentication/view/signup_screen.dart';
 import 'package:coding_hamster/feature/authentication/view/splash_screen.dart';
 import 'package:coding_hamster/feature/home/view/home_screen.dart';
 import 'package:coding_hamster/feature/home/view/profile_screen.dart';
@@ -46,7 +45,7 @@ class _MyAppState extends State<MyApp> {
                   title: "Coding Hamster",
                   debugShowCheckedModeBanner: false,
                   getPages: getPages,
-                  home: const HomeScreen());
+                  home: LoginScreen());
             });
           });
         });

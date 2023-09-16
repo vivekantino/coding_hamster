@@ -45,6 +45,7 @@ class AppButton extends StatelessWidget {
     Key? key,
     VoidCallback? onPressed,
     double? elevation,
+    EdgeInsets? padding,
     Widget? leftIcon,
     Widget? rightIcon,
   }) : this._(
@@ -55,7 +56,7 @@ class AppButton extends StatelessWidget {
           disabledForegroundColor: AppColors.primary.shade3,
           disabledButtonColor: AppColors.primary.shade2,
           elevation: elevation,
-          padding: _defaultPadding,
+          padding: padding??_defaultPadding,
           maximumSize: _defaultMaximumSize,
           minimumSize: _defaultMinimumSize,
           leftIcon: leftIcon,
