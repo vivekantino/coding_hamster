@@ -1,3 +1,4 @@
+import 'package:coding_hamster/auth/auth_repository.dart';
 import 'package:coding_hamster/core/common_widgets/app_buttons.dart';
 import 'package:coding_hamster/core/common_widgets/app_text_field.dart';
 import 'package:coding_hamster/core/utils/utils.dart';
@@ -37,10 +38,18 @@ class ProfileScreen extends StatelessWidget {
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Text(
-                "Personal Detail",
-                style: AppTextStyle.f18w600Blue,
-                textAlign: TextAlign.center,
+              Row(
+                children: [
+                  Text(
+                    "Personal Detail",
+                    style: AppTextStyle.f18w600Blue,
+                    textAlign: TextAlign.center,
+                  ),
+                  Spacer(),
+                  IconButton(
+                      onPressed: () => AuthUtil.instance.logout(),
+                      icon: const Icon(Icons.logout))
+                ],
               ),
               SizedBox(
                 height: 8.heightMultiplier,

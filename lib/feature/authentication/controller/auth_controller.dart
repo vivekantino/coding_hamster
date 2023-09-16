@@ -25,6 +25,7 @@ class AuthController extends GetxController {
       final response = await AuthRepository.login(
           body: {"email": email.text, "password": password.text});
       if (response != null && response['status'] == 200) {
+        AuthUtil.instance.setAccessToken(response["access"]);
         Get.to(() => HomeScreen());
       }
     } on ApiException catch (e) {
