@@ -1,4 +1,7 @@
 import 'package:coding_hamster/local_storage/secure_storage_helper.dart';
+import 'package:get/get.dart';
+
+import '../feature/authentication/view/login_screen.dart';
 
 class AuthUtil {
   AuthUtil._();
@@ -61,7 +64,11 @@ class AuthUtil {
     return await _secureStorage.write('userTypeLocal', userTypeLocal);
   }
 
-  Future<void> logout() async {}
+  Future<void> logout() async {
+     Get.offAll(()=>LoginScreen());
+    Get.deleteAll();
+    return await _secureStorage.deleteAll();
+  }
 
   Future<void> userBlocked() async {
     return await _secureStorage.deleteAll();

@@ -60,12 +60,19 @@ class JobCard extends StatelessWidget {
                   IconWithTitle(icondata: Icons.payment, title: title),
                 ],
               ),
-              BlueButton(
-                title: "Apply",
-                padding: EdgeInsets.symmetric(
-                    horizontal: 16.widthMultiplier,
-                    vertical: 8.heightMultiplier),
-              )
+              //BlueButton(
+              //   title: "Apply",
+              //   padding: EdgeInsets.symmetric(
+              //       horizontal: 16.widthMultiplier,
+              //       vertical: 8.heightMultiplier),
+              // )
+               IconButton(
+                onPressed: (){
+                  
+                },
+                icon:Icon(Icons.bookmark_outline),
+                color: AppColors.primary,
+              ),
             ],
           ),
         ],
