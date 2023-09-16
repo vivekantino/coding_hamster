@@ -45,7 +45,7 @@ class _MyAppState extends State<MyApp> {
                   title: "Coding Hamster",
                   debugShowCheckedModeBanner: false,
                   getPages: getPages,
-                  home: LoginScreen());
+                  home: SplashScreen());
             });
           });
         });

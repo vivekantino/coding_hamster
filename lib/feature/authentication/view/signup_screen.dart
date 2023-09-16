@@ -88,6 +88,17 @@ class SignUpScreen extends StatelessWidget {
                 height: 24.heightMultiplier,
               ),
               AppTextField(
+                hintText: "Enter your Password",
+                labelText: "Password",
+                controller: controller.password,
+                onChanged: (value) {
+                  controller.checkSignUpStatus();
+                },
+              ),
+              SizedBox(
+                height: 24.heightMultiplier,
+              ),
+              AppTextField(
                 hintText: "Phone number",
                 labelText: "Phone number",
                 controller: controller.phoneNo,
@@ -110,8 +121,9 @@ class SignUpScreen extends StatelessWidget {
               ),
               Obx(
                 () => AppButton.primaryMedium(
-                  onPressed:
-                      (controller.isSignUpFilled.value == true) ? () {} : null,
+                  onPressed: (controller.isSignUpFilled.value == true)
+                      ? () => controller.signUp()
+                      : null,
                   child: const Text("Sign Up"),
                 ),
               )

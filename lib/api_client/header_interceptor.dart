@@ -73,8 +73,8 @@ class AuthInterceptor extends QueuedInterceptor {
     }
 
     //Add token if exists
-    if (AuthRepository.accessToken != null) {
-      tempHeader['authorization'] = "Bearer ${AuthRepository.accessToken}";
+    if (AuthUtil.accessToken != null) {
+      tempHeader['authorization'] = "Bearer ${AuthUtil.accessToken}";
     } else {
       tempHeader.remove('authorization');
     }
@@ -90,8 +90,8 @@ class AuthInterceptor extends QueuedInterceptor {
   ///Returns true if both tokens are null because on this case no auth is required.
   ///Returns true if token is refreshed
   Future<bool> _hasRequestTokenExpired() async {
-    final refreshToken = AuthRepository.refreshToken;
-    final accessToken = AuthRepository.accessToken;
+    final refreshToken = AuthUtil.refreshToken;
+    final accessToken = AuthUtil.accessToken;
     if (refreshToken == null && accessToken == null) {
       return true;
     }
