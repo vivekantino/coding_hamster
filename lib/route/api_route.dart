@@ -5,5 +5,5 @@ abstract class ApiRoutes {
 
   static String loginUrl = '$baseUrl/login/';
   static String signupUrl = '$baseUrl/signup/';
-  static String jobUrl = '$baseUrl/jobs/detail/';
+  static String getJobs = '$baseUrl/jobs/listcreate/';
 }

@@ -23,10 +23,9 @@ class _SplashScreenState extends State<SplashScreen> {
 
   @override
   void initState() {
-    // TODO: implement initState
-    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async{
+    WidgetsBinding.instance.addPostFrameCallback((timeStamp) async {
       await AuthUtil.instance.init();
-       print('${AuthUtil.accessToken}');
+
       _checkLoginStatus();
     });
     super.initState();
