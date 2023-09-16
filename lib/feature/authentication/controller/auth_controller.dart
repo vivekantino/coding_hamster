@@ -14,6 +14,8 @@ class AuthController extends GetxController {
   final TextEditingController email = TextEditingController();
 
   final TextEditingController phoneNo = TextEditingController();
+
+  final TextEditingController password = TextEditingController();
   Future<void> login() async {
     try {
       final response = await AuthRepository.login();
@@ -33,5 +35,9 @@ class AuthController extends GetxController {
     } else {
       isSignUpFilled.value = false;
     }
+  }
+
+  void checkLoginStatus(){
+      
   }
 }

@@ -1,3 +1,4 @@
+import 'package:coding_hamster/feature/authentication/view/login_screen.dart';
 import 'package:coding_hamster/feature/authentication/view/splash_screen.dart';
 import 'package:coding_hamster/responsive/size_config.dart';
 import 'package:coding_hamster/route/app_routes.dart';
@@ -37,12 +38,12 @@ class _MyAppState extends State<MyApp> {
               SizeConfig().init(constraints, orientation);
               return GetMaterialApp(
                   theme: ThemeData(
-                    fontFamily: 'Roboto',
+                      fontFamily: 'Roboto',
                       scaffoldBackgroundColor: AppColors.white),
                   title: "Coding Hamster",
                   debugShowCheckedModeBanner: false,
                   getPages: getPages,
-                  home: const SplashScreen());
+                  home: LoginScreen());
             });
           });
         });

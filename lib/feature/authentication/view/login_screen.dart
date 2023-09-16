@@ -1,17 +1,20 @@
 import 'package:coding_hamster/core/common_widgets/app_buttons.dart';
 import 'package:coding_hamster/core/common_widgets/app_text_field.dart';
+import 'package:coding_hamster/feature/authentication/controller/auth_controller.dart';
 import 'package:coding_hamster/theme/app_colors.dart';
 import 'package:coding_hamster/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class LoginScreen extends StatelessWidget {
-   LoginScreen({super.key});
-  
-  final TextEditingController _emailController=TextEditingController();
-  final TextEditingController _passwordController=TextEditingController();
+  LoginScreen({super.key});
+
+  final TextEditingController _emailController = TextEditingController();
+  final TextEditingController _passwordController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
+    final authController = Get.put(AuthController());
     return Scaffold(
       body: SafeArea(
         child: Container(
@@ -39,40 +42,40 @@ class LoginScreen extends StatelessWidget {
                 height: 20,
               ),
               Padding(
-                padding: EdgeInsets.symmetric(horizontal: 16.0),
+                padding: const EdgeInsets.symmetric(horizontal: 16.0),
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    Text(
+                    const Text(
                       'Email Id',
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     AppTextField(
                       hintText: "Enter your Email",
-                       controller: _emailController,
+                      controller: authController.email,
                     ),
-                    SizedBox(height: 24),
-                    Text(
+                    const SizedBox(height: 24),
+                    const Text(
                       'Password',
                       style:
                           TextStyle(fontWeight: FontWeight.w500, fontSize: 15),
                     ),
-                    SizedBox(height: 4),
+                    const SizedBox(height: 4),
                     AppTextField(
                       hintText: "Password",
-                       controller: _passwordController,
+                      controller: authController.password,
                     ),
-                    SizedBox(
+                    const SizedBox(
                       height: 20,
                     ),
                     AppButton.primaryMedium(
-                      padding: EdgeInsets.symmetric(vertical: 13),
-                      child: Text(
+                      padding: const EdgeInsets.symmetric(vertical: 13),
+                      child: const Text(
                         'Continue',
                       ),
-                     // onPressed: is,
+                      onPressed: () => authController.checkLoginStatus(),
                     ),
                   ],
                 ),
