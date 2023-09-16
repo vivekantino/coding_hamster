@@ -37,7 +37,7 @@ class _MyAppState extends State<MyApp> {
               SizeConfig().init(constraints, orientation);
               return GetMaterialApp(
                   theme: ThemeData(
-                      fontFamily: 'Inter',
+                    fontFamily: 'Roboto',
                       scaffoldBackgroundColor: AppColors.white),
                   title: "Coding Hamster",
                   debugShowCheckedModeBanner: false,
