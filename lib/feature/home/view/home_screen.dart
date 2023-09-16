@@ -1,4 +1,6 @@
+import 'package:coding_hamster/core/utils/utils.dart';
 import 'package:coding_hamster/extension/size_extension.dart';
+import 'package:coding_hamster/feature/home/controller/home_controller.dart';
 import 'package:coding_hamster/feature/home/widget/blue_button.dart';
 import 'package:coding_hamster/feature/home/widget/icon_with_title.dart';
 import 'package:coding_hamster/feature/home/widget/job_card.dart';
@@ -8,8 +10,21 @@ import 'package:coding_hamster/theme/app_text_style.dart';
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class HomeScreen extends StatelessWidget {
+class HomeScreen extends StatefulWidget {
   const HomeScreen({super.key});
+
+  @override
+  State<HomeScreen> createState() => _HomeScreenState();
+}
+
+class _HomeScreenState extends State<HomeScreen> {
+  final HomeController homeController = Get.put(HomeController());
+  @override
+  void initState() {
+    // TODO: implement initState
+    homeController.getJobsList();
+    super.initState();
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -54,22 +69,37 @@ class HomeScreen extends StatelessWidget {
           ),
         ],
       ),
-      body: Column(
-        children: [
-          Expanded(
-            child: ListView.builder(
-              itemBuilder: (context, index) {
-                return JobCard(
-                  title: "Job tilte",
-                  location: 'location',
-                  companyName: 'Company Name',
-                  price: 'Rs 200 - Rs 300',
-                  time: '1 day ago',
-                );
-              },
-            ),
-          )
-        ],
+      body: Obx(
+        () => homeController.isJobLoaded.value
+            ? Column(
+                children: [
+                  Expanded(
+                    child: ListView.builder(
+                      itemCount: homeController.listofAllJobs.length,
+                      itemBuilder: (context, index) {
+                        return JobCard(
+                          title: homeController.listofAllJobs[index].jobTitle ??
+                              "",
+                          location:
+                              homeController.listofAllJobs[index].location ??
+                                  "",
+                          companyName:
+                              homeController.listofAllJobs[index].company ?? "",
+                          price:
+                              homeController.listofAllJobs[index].salaryRange ??
+                                  "",
+                          time: Utils.calculateAgo(
+                              time: DateTime.now(),
+                              fromDate: (homeController
+                                      .listofAllJobs[index].createdOn ??
+                                  DateTime.now())),
+                        );
+                      },
+                    ),
+                  )
+                ],
+              )
+            : const Center(child: CircularProgressIndicator()),
       ),
     );
   }
