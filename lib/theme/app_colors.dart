@@ -28,56 +28,19 @@ abstract class AppColors {
   static const Color shimmerBaseColor = Color(0xffEEEEEE);
   static const Color highlightGradient1 = Color(0xffFF6B6A);
 
-  static const MaterialColor primary1 = MaterialColor(0xFFF96656, <int, Color>{
-    50: Color(0xFFFFEDEF),
-    100: Color(0xFFFFD3D5),
-    200: Color(0xFFF5A49F),
-    300: Color(0xFFEE8179),
-    400: Color(0xFFF96656),
-    500: Color(0xFFFD5A3B),
-    600: Color(0xFFF0523B),
-    700: Color(0xFFDE4835),
-    800: Color(0xFFD1422F),
-    900: Color(0xFFC13822),
+  static const MaterialColor primary = MaterialColor(0xFF6C83F3, <int, Color>{
+    50: Color(0xFFCBD9FE),
+    100: Color(0xFFBACCFD),
+    200: Color(0xFF9BB1FB),
+    300: Color(0xFF8199F8),
+    400: Color(0xFF6C83F3),
+    500: Color(0xFF5B6EEB),
+    600: Color(0xFF4B59DA),
+    700: Color(0xFF3840B3),
+    800: Color(0xFF232576),
+    900: Color(0xFF0E0E1C),
   });
-  static const MaterialColor primary101 =
-      MaterialColor(0xFFFF6B6B, <int, Color>{
-    50: Color(0xFFFFEBEE),
-    100: Color(0xFFFFCCD1),
-    200: Color(0xFFFF8686),
-    300: Color(0xFFFF6B6B),
-    400: Color(0xFFFF4142),
-    500: Color(0xFFFF2C22),
-    600: Color(0xFFFF1D25),
-    700: Color(0xFFEE061F),
-    800: Color(0xFFE00017),
-    900: Color(0xFFD00007),
-  });
-  static const MaterialColor primary2 = MaterialColor(0xFFF88D6C, <int, Color>{
-    50: Color(0xFFFAEBE8),
-    100: Color(0xFFFED0C0),
-    200: Color(0xFFFEB298),
-    300: Color(0xFFFF946E),
-    400: Color(0xFFF98E6D),
-    500: Color(0xFFFF6830),
-    600: Color(0xFFF4622C),
-    700: Color(0xFFE65B27),
-    800: Color(0xFFD85424),
-    900: Color(0xFFBF471C),
-  });
-  // TODO:
-  static const MaterialColor secondary = MaterialColor(0xFF963F6E, <int, Color>{
-    50: Color(0xFFFFECF3),
-    100: Color(0xFFFFD8E9),
-    200: Color(0xFFFFAFD6),
-    300: Color(0xFFF28ABE),
-    400: Color(0xFFD371A3),
-    500: Color(0xFFB55788),
-    600: Color(0xFF963F6E),
-    700: Color(0xFF7A2756),
-    800: Color(0xFF5F0F40),
-    900: Color(0xFF3D0026),
-  });
+
   static const MaterialColor neutral = MaterialColor(0xff6F6F6F, <int, Color>{
     50: Color(0xFFF9F9F9),
     100: Color(0xFFF3F3F3),
@@ -91,7 +54,7 @@ abstract class AppColors {
     900: Color(0xFF1C1C1C),
   });
   // TODO:
-  static const MaterialColor success = MaterialColor(0xFF963F6E, <int, Color>{
+  static const MaterialColor success = MaterialColor(0xFF61BD85, <int, Color>{
     50: Color(0xFFEDF9E6),
     100: Color(0xFFD2EFC2),
     200: Color(0xFFB4E49A),
@@ -103,7 +66,7 @@ abstract class AppColors {
     800: Color(0xFF0F9000),
     900: Color(0xFF006E00),
   });
-  static const MaterialColor error = MaterialColor(0xFF963F6E, <int, Color>{
+  static const MaterialColor error = MaterialColor(0xFFD95353, <int, Color>{
     50: Color(0xFFFFE9ED),
     100: Color(0xFFFFC9CF),
     200: Color(0xFFF49293),

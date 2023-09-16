@@ -158,7 +158,7 @@ class ApiClient {
       final data = response?.data;
       int? statusCode = response?.statusCode;
       if (statusCode == 401) {
-        AuthRepository.instance.logout();
+        AuthUtil.instance.logout();
         // SecureStorageHelper.instance.deleteAll();
         // getX.Get.deleteAll();
         // getX.Get.put(LoginController());

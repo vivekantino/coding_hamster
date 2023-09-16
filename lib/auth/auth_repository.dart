@@ -1,13 +1,16 @@
 import 'package:coding_hamster/local_storage/secure_storage_helper.dart';
+import 'package:get/get.dart';
 
-class AuthRepository {
-  AuthRepository._();
+import '../feature/authentication/view/login_screen.dart';
 
-  /// Cached instance of [AuthRepository];
-  static AuthRepository? _instance;
+class AuthUtil {
+  AuthUtil._();
 
-  static AuthRepository get instance {
-    _instance ??= AuthRepository._();
+  /// Cached instance of [AuthUtil];
+  static AuthUtil? _instance;
+
+  static AuthUtil get instance {
+    _instance ??= AuthUtil._();
 
     return _instance!;
   }
@@ -61,7 +64,11 @@ class AuthRepository {
     return await _secureStorage.write('userTypeLocal', userTypeLocal);
   }
 
-  Future<void> logout() async {}
+  Future<void> logout() async {
+     Get.offAll(()=>LoginScreen());
+    Get.deleteAll();
+    return await _secureStorage.deleteAll();
+  }
 
   Future<void> userBlocked() async {
     return await _secureStorage.deleteAll();
