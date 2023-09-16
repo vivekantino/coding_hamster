@@ -14,6 +14,12 @@ class AppTextStyle {
     fontWeight: FontWeight.w400,
     color: AppColors.neutral.shade6,
   );
+
+  static final f12w400White = TextStyle(
+    fontSize: 12.textMultiplier,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
   static final f14w400White = TextStyle(
     fontSize: 14.textMultiplier,
     fontWeight: FontWeight.w400,
@@ -53,5 +59,10 @@ class AppTextStyle {
     fontSize: 18.textMultiplier,
     fontWeight: FontWeight.w600,
     color: AppColors.primary.shade10,
+  );
+  static final f18w600Primary = TextStyle(
+    fontSize: 18.textMultiplier,
+    fontWeight: FontWeight.w600,
+    color: AppColors.primary,
   );
 }
