@@ -7,6 +7,21 @@ class AppTextStyle {
     fontSize: 10.textMultiplier,
     fontFamily: 'Inter',
     fontWeight: FontWeight.w400,
-    color: AppColors.whiteColor,
+    color: AppColors.white,
+  );
+  static final f14w400White = TextStyle(
+    fontSize: 14.textMultiplier,
+    fontWeight: FontWeight.w400,
+    color: AppColors.white,
+  );
+  static final f14w600White = TextStyle(
+    fontSize: 14.textMultiplier,
+    fontWeight: FontWeight.w600,
+    color: AppColors.white,
+  );
+  static final f16w500White = TextStyle(
+    fontSize: 16.textMultiplier,
+    fontWeight: FontWeight.w500,
+    color: AppColors.white,
   );
 }

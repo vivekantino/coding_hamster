@@ -38,7 +38,7 @@ class _MyAppState extends State<MyApp> {
               return GetMaterialApp(
                   theme: ThemeData(
                       fontFamily: 'Inter',
-                      scaffoldBackgroundColor: AppColors.whiteColor),
+                      scaffoldBackgroundColor: AppColors.white),
                   title: "EZ Contract",
                   debugShowCheckedModeBanner: false,
                   getPages: getPages,
